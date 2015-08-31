@@ -1,0 +1,36 @@
+{
+  "name": "carmen",
+  "version": "0.0.1",
+  "description": "Full stack ES6 command line utility.",
+  "main": "index.js",
+  "bin": {
+    "carmen": "carmen.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamalasaurus/carmen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kamalasaurus/carmen/issues"
+  },
+  "keywords": [
+    "ES6",
+    "jspm",
+    "babel",
+    "koa",
+    "iojs"
+  ],
+  "author": "K-_-R <kamalasaurus@gmail.com> (http://kamalasaurus.github.io)",
+  "license": "MIT",
+  "engines": {
+    "iojs": ">=2.3.4"
+  },
+  "dependencies": {
+    "babel": "^5.8.21",
+    "chalk": "^1.1.0",
+    "shelljs": "^0.5.1"
+  }
+}
