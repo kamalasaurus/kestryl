@@ -4,16 +4,24 @@ module.exports = function() {
     DEPENDENCIES
   ================================================================== */
 
-  var chalk   = require('chalk');
+  var shout   = require('../utils/shout');
+  var close   = require('../utils/close');
+  var exe     = require('../utils/exe');            // run code synchronously
+  var fsJson  = require('../utils/fs-json')         // add fields to json
 
-  var close   = require('./close');
-  var exe     = require('./exe');               // run code synchronously
-  var deps    = require('../lib/dependencies'); // keys: npm, jspm, gitignore
-  var scripts = require('../lib/scripts');      // keys: scripts
+  var deps    = require('../lib/dependencies');     // keys: npm, jspm, gitignore
+  var scripts = require('../lib/scripts');          // keys: scripts
+
+  var content = exe('ls -A | wc -l', true);         // checks if target directory has contents
 
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
+
+  // exit if directory not empty (!!+str)
+  // +  coerces str to number
+  // !! coerces 0 -> false, else -> true
+  if (!!+content) { close('directory must be empty', 'red') };
 
   // git init
   exe('git init');
@@ -21,15 +29,24 @@ module.exports = function() {
   // prompt for addition of actual remote
 
 
+  // create readme
+  exe('touch README.md');
+  exe('printf "Create Readme" >> README.md')
+
   // prompted initializations
+
+  shout('input npm fields');
   exe('npm init');
+
+  shout('installing jspm');
   exe('npm install --save-dev jspm');
+
+  shout('input jspm fields');
   exe('jspm init');
 
-  console.log(chalk.bold.green('YOU MAY NOW STEP AWAY AND GRAB A DRINK'));
+  shout('you may now step away and grab a drink');
 
   // server dependencies
-  exe('touch README.md');
   deps.npm.forEach(function(dep) {
     exe('npm install --save-dev ' + dep);
   });
@@ -42,7 +59,7 @@ module.exports = function() {
   // .gitignore
   exe('touch .gitignore');
   deps.gitignore.forEach(function(dep) {
-    exe('echo "' + dep + '" >> .gitignore');
+    exe('printf "' + dep + '" >> .gitignore');
   });
 
   // create directory structure and boilerplate
@@ -55,7 +72,7 @@ module.exports = function() {
   exe('touch index.html');
 
   // append scripts to package.json
-
+  fsJson('package.json', scripts)
 
   close('THE COFFEE HAS BEEN SPILT', 'green');
 

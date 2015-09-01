@@ -1,9 +1,10 @@
 module.exports = function() {
 
-  var chalk = require('chalk');
-  var close = require('./close');
+  var close    = require('../utils/close');
+  var version  = require('../package').version;
+  var preamble = 'Carmen is at version: '
 
-  console.log(chalk.bold('version'));
+  console.log(preamble + version);
   close();
 
 }

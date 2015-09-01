@@ -7,9 +7,9 @@ var chalk    = require('chalk');
 
 // utils
 var contains = require('./utils/contains');
+var close    = require('./utils/close');
 
 // scripts
-var close    = require('./scripts/close');
 var init     = require('./scripts/init');
 var help     = require('./scripts/help');
 var version  = require('./scripts/version');

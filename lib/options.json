@@ -3,13 +3,17 @@
     "--version",
     "-version",
     "version",
-    "-v"
+    "--v",
+    "-v",
+    "v"
   ],
   "help": [
     "--help",
     "-help",
     "help",
+    "--h",
     "-h",
+    "h",
     "--halp",
     "-halp",
     "halp"
