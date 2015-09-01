@@ -72,7 +72,7 @@ module.exports = function() {
   exe('touch index.html');
 
   // append scripts to package.json
-  fsJson('package.json', scripts)
+  fsJson('package.json', scripts);
 
   close('THE COFFEE HAS BEEN SPILT', 'green');
 

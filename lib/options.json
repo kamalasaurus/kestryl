@@ -1,24 +1,33 @@
 {
-  "version": [
-    "--version",
-    "-version",
-    "version",
-    "--v",
-    "-v",
-    "v"
-  ],
-  "help": [
-    "--help",
-    "-help",
-    "help",
-    "--h",
-    "-h",
-    "h",
-    "--halp",
-    "-halp",
-    "halp"
-  ],
-  "init": [
-    "init"
-  ]
+  "version": {
+    "args": [
+      "--version",
+      "-version",
+      "version",
+      "--v",
+      "-v",
+      "v"
+    ],
+    "help": "print version number"
+  },
+  "help": {
+    "args": [
+      "--help",
+      "-help",
+      "help",
+      "--h",
+      "-h",
+      "h",
+      "--halp",
+      "-halp",
+      "halp"
+    ],
+    "help": "print valid commands"  
+  },
+  "init": {
+    "args": [
+      "init"
+    ],
+    "help": "initialize a new project in an empty directory"
+  }
 }

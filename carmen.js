@@ -3,10 +3,8 @@
 
 process.title = 'carmen';
 
-var chalk    = require('chalk');
-
 // utils
-var contains = require('./utils/contains');
+var contains = require('./utils/utils').contains;
 var close    = require('./utils/close');
 
 // scripts
@@ -28,8 +26,8 @@ if (args.length === 2) {
   help();
 }
 
-contains(options.init, arg)    ? init()    : void(0);
-contains(options.help, arg)    ? help()    : void(0);
-contains(options.version, arg) ? version() : void(0);
+contains(options.init.args, arg)    ? init()    : void(0);
+contains(options.help.args, arg)    ? help()    : void(0);
+contains(options.version.args, arg) ? version() : void(0);
 
 close('invalid argument', 'red');
