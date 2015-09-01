@@ -9,6 +9,7 @@ var chalk    = require('chalk');
 var contains = require('./utils/contains');
 
 // scripts
+var close    = require('./scripts/close');
 var init     = require('./scripts/init');
 var help     = require('./scripts/help');
 var version  = require('./scripts/version');
@@ -20,22 +21,15 @@ var args = process.argv;
 var arg = args[2];
 
 if (args.length > 3) {
-  console.log(chalk.bold.red('too many arguments'));
-  process.exit(1);
+  close('too many arguments', 'red');
 }
 
 if (args.length === 2) {
   help();
-  process.exit(1);
 }
 
-if        (contains(options.init, arg))    {
-  init();
-} else if (contains(options.help, arg))    {
-  help();
-} else if (contains(options.version, arg)) {
-  version();
-} else {
-  console.log(chalk.bold.red('invalid argument'));
-  process.exit(1);
-}
+contains(options.init, arg)    ? init()    : void(0);
+contains(options.help, arg)    ? help()    : void(0);
+contains(options.version, arg) ? version() : void(0);
+
+close('invalid argument', 'red');

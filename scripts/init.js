@@ -6,6 +6,7 @@ module.exports = function() {
 
   var chalk   = require('chalk');
 
+  var close   = require('./close');
   var exe     = require('./exe');               // run code synchronously
   var deps    = require('../lib/dependencies'); // keys: npm, jspm, gitignore
   var scripts = require('../lib/scripts');      // keys: scripts
@@ -55,6 +56,7 @@ module.exports = function() {
 
   // append scripts to package.json
 
-  console.log(chalk.bold.green('THE COFFEE HAS BEEN SPILT'));
+
+  close('THE COFFEE HAS BEEN SPILT', 'green');
 
 }
