@@ -4,10 +4,10 @@ module.exports = function() {
   var carmStr     = 'carmen'
   var leadSpace   = (new Array(25)).join(' ');
 
-  var printArray  = require('../utils/utils').printArray;
+  var printArray  = require('../functions/utils').printArray;
 
-  var printHeader = require('../utils/header');
-  var close       = require('../utils/close');
+  var printHeader = require('../functions/header');
+  var close       = require('../functions/close');
   var commands    = require('../lib/options');
 
   printHeader();

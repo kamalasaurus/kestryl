@@ -4,10 +4,10 @@ module.exports = function() {
     DEPENDENCIES
   ================================================================== */
 
-  var shout   = require('../utils/shout');
-  var close   = require('../utils/close');
-  var exe     = require('../utils/exe');            // run code synchronously
-  var fsJson  = require('../utils/fs-json')         // add fields to json
+  var shout   = require('../functions/shout');
+  var close   = require('../functions/close');
+  var exe     = require('../functions/exe');            // run code synchronously
+  var fsJson  = require('../functions/fs-json')         // add fields to json
 
   var deps    = require('../lib/dependencies');     // keys: npm, jspm, gitignore
   var scripts = require('../lib/scripts');          // keys: scripts

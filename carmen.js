@@ -4,8 +4,8 @@
 process.title = 'carmen';
 
 // utils
-var contains = require('./utils/utils').contains;
-var close    = require('./utils/close');
+var contains = require('./functions/utils').contains;
+var close    = require('./functions/close');
 
 // scripts
 var init     = require('./scripts/init');

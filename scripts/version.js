@@ -1,6 +1,6 @@
 module.exports = function() {
 
-  var close    = require('../utils/close');
+  var close    = require('../functions/close');
   var version  = require('../package').version;
   var preamble = 'Carmen is at version: '
 
