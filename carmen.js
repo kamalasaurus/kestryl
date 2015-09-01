@@ -1,61 +1,41 @@
 #! /usr/bin/env node
-'use strict'
+'use strict';
 
 process.title = 'carmen';
 
-/* ==================================================================
-  IMPORTS AND FUNCTIONALITY
-================================================================== */
+var chalk    = require('chalk');
 
-var chalk = require('chalk');
+// utils
+var contains = require('./utils/contains');
 
-//synchronous is good for build scripts (megusta)
-var proc = require('child_process').execSync;
+// scripts
+var init     = require('./scripts/init');
+var help     = require('./scripts/help');
+var version  = require('./scripts/version');
 
-//keys: npm, jspm, gitignore
-var dependencies = require('./lib/dependencies');
+// command-line options
+var options  = require('./lib/options');
 
-//keys: scripts
-var scripts = require('./lib/scripts');
+var args = process.argv;
+var arg = args[2];
 
-function exe(command) {
-  //allows interactive steps to pass control to the child process
-  proc(command, {stdio:[0,1,2]});
+if (args.length > 3) {
+  console.log(chalk.bold.red('too many arguments'));
+  process.exit(1);
 }
 
-/* ==================================================================
-  INITIALIZATION SCRIPT
-================================================================== */
+if (args.length === 2) {
+  help();
+  process.exit(1);
+}
 
-//git init
-exe('git init');
-
-//prompt for addition of actual remote
-
-
-//global dependencies
-exe('npm install -g jspm');
-
-//prompted initializations
-exe('npm init');
-exe('jspm init');
-
-console.log(chalk.bold.green('YOU MAY NOW STEP AWAY AND GRAB A DRINK'));
-
-//server dependencies
-dependencies.npm.forEach(function(dep) {
-  exe('npm install ' + dep);
-});
-
-//client dependencies
-
-//.gitignore
-exe('touch .gitignore');
-dependencies.gitignore.forEach(function(dep) {
-  exe('echo "' + dep + '" >> .gitignore');
-});
-
-//create directory structure and boilerplate
-
-//append scripts to package.json
-
+if        (contains(options.init, arg))    {
+  init();
+} else if (contains(options.help, arg))    {
+  help();
+} else if (contains(options.version, arg)) {
+  version();
+} else {
+  console.log(chalk.bold.red('invalid argument'));
+  process.exit(1);
+}
