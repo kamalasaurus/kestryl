@@ -1,0 +1,19 @@
+{
+  "npm": [
+    "babel",
+    "koa",
+    "koa-router",
+    "koa-qs",
+    "co-fs",
+    "mongorito",
+    "nodemon"
+  ],
+  "jspm": [
+    "react",
+    "react-dom"
+  ],
+  "gitignore": [
+    "node_modules",
+    "jspm_packages"
+  ] 
+}

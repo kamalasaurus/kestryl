@@ -29,8 +29,6 @@
     "iojs": ">=2.3.4"
   },
   "dependencies": {
-    "babel": "^5.8.21",
-    "chalk": "^1.1.0",
-    "shelljs": "^0.5.1"
+    "chalk": "^1.1.0"
   }
 }

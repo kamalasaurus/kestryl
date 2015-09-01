@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node --stage 1 --ignore='dist'",
+    "start": "nodemon --exec babel-node --stage 1 --ignore='dist' -- index.js 8282",
+    "debug": "nodemon --exec babel-node --stage 1 --ignore='dist' -- --debug index.js 8282"
+  }
+}
