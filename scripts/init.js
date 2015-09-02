@@ -4,7 +4,7 @@ module.exports = function() {
     DEPENDENCIES
   ================================================================== */
 
-  var shout   = require('../functions/shout');
+  var say     = require('../functions/say');
   var close   = require('../functions/close');
   var exe     = require('../functions/exe');            // run code synchronously
   var fsJson  = require('../functions/fs-json')         // add fields to json
@@ -21,7 +21,7 @@ module.exports = function() {
   // exit if directory not empty (!!+str)
   // +  coerces str to number
   // !! coerces 0 -> false, else -> true
-  if (!!+content) { close('directory must be empty', 'red') };
+  if (!!+content) { close('directory must be empty', 'error') };
 
   // git init
   exe('git init');
@@ -35,16 +35,16 @@ module.exports = function() {
 
   // prompted initializations
 
-  shout('input npm fields');
+  say.shout('input npm fields'.toUpperCase());
   exe('npm init');
 
-  shout('installing jspm');
+  say.shout('installing jspm');
   exe('npm install --save-dev jspm');
 
-  shout('input jspm fields');
+  say.shout('input jspm fields'.toUpperCase());
   exe('jspm init');
 
-  shout('you may now step away and grab a drink');
+  say.shout('you may now step away and grab a drink'.toUpperCase());
 
   // server dependencies
   deps.npm.forEach(function(dep) {
@@ -74,6 +74,6 @@ module.exports = function() {
   // append scripts to package.json
   fsJson('package.json', scripts);
 
-  close('THE COFFEE HAS BEEN SPILT', 'green');
+  close('project initialized', 'shout');
 
 }

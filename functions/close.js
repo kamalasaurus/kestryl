@@ -1,14 +1,9 @@
-module.exports = function(message, color) {
+module.exports = function(message, messageType) {
 
-  var chalk   = require('chalk');
+  var say = require('./say');
 
-  var colors = {
-    'red': chalk.bold.red,
-    'green': chalk.bold.green
-  }
-
-  if (message && color && colors[color]) {
-    console.log(colors[color](message));
+  if (message && messageType) {
+    say[messageType](message);
   }
 
   process.exit(1);

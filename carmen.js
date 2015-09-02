@@ -19,7 +19,7 @@ var args = process.argv;
 var arg = args[2];
 
 if (args.length > 3) {
-  close('too many arguments', 'red');
+  close('too many arguments', 'error');
 }
 
 if (args.length === 2) {
@@ -30,4 +30,4 @@ contains(options.init.args, arg)    ? init()    : void(0);
 contains(options.help.args, arg)    ? help()    : void(0);
 contains(options.version.args, arg) ? version() : void(0);
 
-close('invalid argument', 'red');
+close('invalid argument', 'error');
