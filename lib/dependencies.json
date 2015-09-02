@@ -14,6 +14,7 @@
   ],
   "gitignore": [
     "node_modules",
-    "jspm_packages"
+    "jspm_packages",
+    ".DS_Store"
   ] 
 }
