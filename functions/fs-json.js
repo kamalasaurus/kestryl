@@ -3,7 +3,7 @@ module.exports = function(file, obj) {
   var fs       = require('fs');
 
   var exe      = require('./exe'); // run code synchronously
-  var dir      = exe('pwd', true);        // uninteractive, but returns stdout as str
+  var dir      = exe('pwd', true); // non-interactive, but returns stdout as str
 
   var keys     = Object.keys;
   var filename = dir + '/' + file;

@@ -17,4 +17,6 @@ module.exports = function() {
 
   console.log(subtitle, '\n\n', linebreak, '\n');
 
+  return;
+
 }
