@@ -6,13 +6,13 @@ module.exports = function() {
 
   var say     = require('../functions/say');
   var close   = require('../functions/close');
-  var exe     = require('../functions/exe');            // run code synchronously
-  var fsJson  = require('../functions/fs-json')         // add fields to json
+  var exe     = require('../functions/exe');     // run code synchronously
+  var fsJson  = require('../functions/fs-json')  // add fields to json
 
-  var deps    = require('../lib/dependencies');     // keys: npm, jspm, gitignore
-  var scripts = require('../lib/scripts');          // keys: scripts
+  var deps    = require('../lib/dependencies');  // keys: npm, jspm, gitignore
+  var scripts = require('../lib/scripts');       // keys: scripts
 
-  var content = exe('ls -A | wc -l', true);         // checks if target directory has contents
+  var content = exe('ls -A | wc -l', true);      // checks if target directory has contents
 
   /* ==================================================================
     INITIALIZATION SCRIPT

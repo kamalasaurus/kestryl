@@ -13,11 +13,11 @@ module.exports = function() {
   printHeader();
 
   keys(commands).forEach(function(command) {
-    var l = printArray(commands[command].args);
-    var v = commands[command].help;
+    var cmdStr = printArray(commands[command].args);
+    var helpStr = commands[command].help;
 
-    console.log(carmStr, l);
-    console.log(leadSpace, v, '\n');
+    console.log(carmStr, cmdStr);
+    console.log(leadSpace, helpStr, '\n');
   });
 
   close();
