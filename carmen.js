@@ -26,8 +26,12 @@ if (args.length === 2) {
   help();
 }
 
-contains(options.init.args, arg)    ? init()    : void(0);
-contains(options.help.args, arg)    ? help()    : void(0);
-contains(options.version.args, arg) ? version() : void(0);
-
-close('invalid argument', 'error');
+if        (contains(options.init.args, arg))    {
+  init();
+} else if (contains(options.help.args, arg))    {
+  help();
+} else if (contains(options.version.args, arg)) {
+  version();
+} else                                          {
+  close('invalid argument', 'error');
+}
