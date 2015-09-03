@@ -4,24 +4,34 @@ module.exports = function() {
     DEPENDENCIES
   ================================================================== */
 
-  var say     = require('../functions/say');
-  var close   = require('../functions/close');
-  var exe     = require('../functions/exe');     // run code synchronously
-  var fsJson  = require('../functions/fs-json'); // add fields to json
+  var say       = require('../functions/say');
+  var close     = require('../functions/close');
+  var exe       = require('../functions/exe');        // run code synchronously
+  var fsJson    = require('../functions/fs-json');    // add fields to json
+  var writeFile = require('../functions/write-file'); // generate files
 
-  var deps    = require('../lib/dependencies');  // keys: npm, jspm, gitignore
-  var scripts = require('../lib/scripts');       // keys: scripts
+  var deps      = require('../lib/dependencies');     // keys: npm, jspm, gitignore
+  var scripts   = require('../lib/scripts');          // keys: scripts
+
+  var dir       = exe('pwd', true);
+  var readme    = require('../assets/readme');
+  var gitconfig = require('../assets/gitconfig');
+  var gitignore = require('../assets/gitignore');
 
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
 
   // create readme
-  exe('touch README.md');
-  exe('printf "Create Readme" >> README.md')
+  writeFile(dir, readme.filename, readme.file);
+
+  // .gitconfig
+  writeFile(dir, gitconfig.filename, gitconfig.file);
+
+  // .gitignore
+  writeFile(dir, gitignore.filename, gitignore.file);
 
   // prompted initializations
-
   say.shout('input npm fields'.toUpperCase());
   exe('npm init');
 
@@ -41,12 +51,6 @@ module.exports = function() {
   // client dependencies
   deps.jspm.forEach(function(dep) {
     exe('jspm install ' + dep);
-  });
-
-  // .gitignore
-  exe('touch .gitignore');
-  deps.gitignore.forEach(function(dep) {
-    exe('printf "' + dep + '" >> .gitignore');
   });
 
   // create directory structure and boilerplate
