@@ -18,6 +18,6 @@ module.exports = {
 
     Refer to [npm](https://github.com/npm/npm) docs
 
-    */});
+    */})
 
 }
