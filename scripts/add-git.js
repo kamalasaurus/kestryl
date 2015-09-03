@@ -24,8 +24,9 @@ module.exports = function(callback) {
 
   rl = readline.createInterface(process.stdin, process.stdout);
   rl.setPrompt(multiline.stripIndent(function(){/*
-    please initialize a git repo at this time
-    initialize without readme or gitignore
+    please initialize a github repo at this time
+    https://help.github.com/articles/create-a-repo/
+    initialize WITHOUT readme or gitignore
     copy the repo url here:
   */}));
   rl.prompt();

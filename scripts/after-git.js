@@ -5,31 +5,16 @@ module.exports = function() {
   ================================================================== */
 
   var say       = require('../functions/say');
-  var close     = require('../functions/close');
-  var exe       = require('../functions/exe');        // run code synchronously
-  var fsJson    = require('../functions/fs-json');    // add fields to json
-  var writeFile = require('../functions/write-file'); // generate files
+  var exe       = require('../functions/exe');     // run code synchronously
+  var fsJson    = require('../functions/fs-json'); // add fields to json
 
-  var deps      = require('../lib/dependencies');     // keys: npm, jspm, gitignore
-  var scripts   = require('../lib/scripts');          // keys: scripts
-
-  var dir       = exe('pwd', true);
-  var readme    = require('../assets/readme');
-  var gitconfig = require('../assets/gitconfig');
-  var gitignore = require('../assets/gitignore');
+  var deps      = require('../lib/dependencies');  // keys: npm, jspm, gitignore
+  var scripts   = require('../lib/scripts');       // keys: scripts
+  var initFiles = require('./init-files');         // initialize project structure
 
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
-
-  // create readme
-  writeFile(dir, readme.filename, readme.file);
-
-  // .gitconfig
-  writeFile(dir, gitconfig.filename, gitconfig.file);
-
-  // .gitignore
-  writeFile(dir, gitignore.filename, gitignore.file);
 
   // prompted initializations
   say.shout('input npm fields'.toUpperCase());
@@ -53,17 +38,10 @@ module.exports = function() {
     exe('jspm install ' + dep);
   });
 
-  // create directory structure and boilerplate
-  exe('mkdir server');
-  exe('mkdir dist');
-  exe('touch server/request.js');
-  exe('touch server/server.js');
-  exe('touch server/mongo.js');
-  exe('touch index.js');
-  exe('touch index.html');
-
   // append scripts to package.json
   fsJson('package.json', scripts);
 
-  close('project initialized', 'shout');
+  // create directory structure and boilerplate
+  initFiles();
+
 }
