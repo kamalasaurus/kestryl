@@ -30,6 +30,7 @@ module.exports = function() {
 
   // directories
   exe('mkdir server');
+  exe('mkdir lib');
   exe('mkdir dist');
 
   writeFile(dir, indexHTML.filename, indexHTML.file);
