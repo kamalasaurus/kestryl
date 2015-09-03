@@ -1,7 +1,7 @@
 var multiline = require('multiline');
 
 module.exports = {
-  filename: 'README.md',
+  filename: 'index.html',
   file: multiline.stripIndent(function(){/*
     <!doctype html>
     <head>

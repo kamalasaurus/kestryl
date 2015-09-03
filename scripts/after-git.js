@@ -7,14 +7,21 @@ module.exports = function() {
   var say       = require('../functions/say');
   var exe       = require('../functions/exe');     // run code synchronously
   var fsJson    = require('../functions/fs-json'); // add fields to json
+  var writeFile = require('../functions/write-file'); // generate files
 
   var deps      = require('../lib/dependencies');  // keys: npm, jspm, gitignore
   var scripts   = require('../lib/scripts');       // keys: scripts
   var initFiles = require('./init-files');         // initialize project structure
 
+  var dir       = exe('pwd', true);
+  var readme    = require('../assets/readme');
+
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
+
+  // create readme
+  writeFile(dir, readme.filename, readme.file);
 
   // prompted initializations
   say.shout('input npm fields'.toUpperCase());

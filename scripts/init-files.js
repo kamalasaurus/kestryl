@@ -19,9 +19,6 @@ module.exports = function() {
     INITIALIZATION SCRIPT
   ================================================================== */
 
-  // create readme
-  writeFile(dir, readme.filename, readme.file);
-
   // .gitconfig
   writeFile(dir, gitconfig.filename, gitconfig.file);
 
@@ -39,6 +36,9 @@ module.exports = function() {
   exe('touch server/server.js');
   exe('touch server/mongo.js');
   exe('touch index.js');
+
+  exe('git add .');
+  exe('git commit -m "Welcome to Carmen!"')
 
   close('project initialized', 'shout');
 
