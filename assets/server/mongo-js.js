@@ -13,8 +13,8 @@ module.exports = {
 
     export default class Mongo {
 
-      constructor() {
-        Mongorito.connect('mongodb://54.184.18.78:27017/kenny');
+      constructor(addr) {
+        Mongorito.connect(`mongodb://${addr}`);
       }
 
       *getCases(ids) {

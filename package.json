@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "chalk": "^1.1.0",
-    "multiline": "^1.0.2"
-  }
+    "multiline": "^1.0.2",
+    "require-dir": "^0.3.0"
+  },
+  "devDependencies": {}
 }

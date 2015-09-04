@@ -9,7 +9,7 @@ module.exports = {
     import fs from 'co-fs';
 
     import Mongo from './server/mongo';
-    import { getStatute } from './server/request';
+    import { get } from './server/request';
 
     const { keys } = Object;
 
@@ -18,7 +18,7 @@ module.exports = {
     var routes = router();
     queryString(app, 'first');
 
-    var mongo = new Mongo();
+    var mongo = new Mongo('54.184.18.78:27017/kenny');
 
     routes
       .get('/', function* (next) {
@@ -32,6 +32,10 @@ module.exports = {
       .get('/dist.css', function* (next) {
         this.response.type = 'text/css';
         this.body = yield fs.readFile('./dist/dist.css', 'utf8');
+      })
+      .get('/data', function* (next) {
+        this.response.type = 'application/json';
+        this.body = yield get(this.query);
       });
 
     app

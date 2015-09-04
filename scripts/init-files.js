@@ -4,16 +4,18 @@ module.exports = function() {
     DEPENDENCIES
   ================================================================== */
 
-  var close     = require('../functions/close');
-  var exe       = require('../functions/exe');        // run code synchronously
-  var writeFile = require('../functions/write-file'); // generate files
+  var requireDir = require('require-dir');
 
-  var readme    = require('../assets/readme');
-  var gitconfig = require('../assets/gitconfig');
-  var gitignore = require('../assets/gitignore');
-  var indexHTML = require('../assets/index-html');
+  var close      = require('../functions/close');
+  var exe        = require('../functions/exe');        // run code synchronously
+  var writeFile  = require('../functions/write-file'); // generate files
 
-  var dir       = exe('pwd', true);
+  var readme     = require('../assets/readme');
+  var gitconfig  = require('../assets/gitconfig');
+  var gitignore  = require('../assets/gitignore');
+  var indexHTML  = require('../assets/index-html');
+
+  var dir        = exe('pwd', true);
 
   /* ==================================================================
     INITIALIZATION SCRIPT
