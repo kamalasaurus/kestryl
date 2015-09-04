@@ -14,14 +14,14 @@ module.exports = function() {
   var initFiles = require('./init-files');         // initialize project structure
 
   var dir       = exe('pwd', true);
-  var readme    = require('../assets/readme');
+  var readme    = require('../assets/readme-md');
 
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
 
   // create readme
-  writeFile(dir, readme.filename, readme.file);
+  writeFile(dir, readmeMD.filename, readmeMD.file);
 
   // prompted initializations
   say.shout('input npm fields'.toUpperCase());
