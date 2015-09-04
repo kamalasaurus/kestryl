@@ -14,7 +14,7 @@ module.exports = function() {
   var initFiles = require('./init-3');             // initialize project structure
 
   var dir       = exe('pwd', true);
-  var readme    = require('../assets/readme-md');
+  var readmeMD  = require('../assets/readme-md');
 
   /* ==================================================================
     INITIALIZATION SCRIPT

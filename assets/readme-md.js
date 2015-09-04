@@ -32,8 +32,7 @@ module.exports = {
     ├── package.json
     └── server
         ├── mongo.js
-        ├── request.js
-        └── server.js
+        └── request.js
 
     */})
 }

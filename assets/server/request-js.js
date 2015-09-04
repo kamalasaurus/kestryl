@@ -14,7 +14,7 @@ module.exports = {
 
       return new Promise((resolve, reject)=> {
         return http.get(`${route}`, (resp, err)=> {
-          if (err) {} reject(err); }
+          if (err) { reject(err); }
           var dat = '';
           resp.on('data', (chunk)=> { dat += chunk; });
           resp.on('end', ()=> {
