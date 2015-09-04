@@ -5,6 +5,7 @@ module.exports = {
   file: multiline.stripIndent(function(){/*
     import koa from 'koa';
     import router from 'koa-router';
+    import serve from 'koa-static';
     import queryString from 'koa-qs';
     import fs from 'co-fs';
 
@@ -39,6 +40,7 @@ module.exports = {
       });
 
     app
+      .use(serve('.', {defer: true}))
       .use(routes.routes())
       .use(routes.allowedMethods())
       .listen(process.argv[2]);

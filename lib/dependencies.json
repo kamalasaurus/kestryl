@@ -3,6 +3,7 @@
     "babel",
     "koa",
     "koa-router",
+    "koa-static",
     "koa-qs",
     "co-fs",
     "mongorito",
