@@ -26,7 +26,7 @@ module.exports = function(callback) {
   rl.setPrompt(multiline.stripIndent(function(){/*
     please initialize a github repo at this time
     https://help.github.com/articles/create-a-repo/
-    initialize WITHOUT readme or gitignore
+    initialize WITHOUT readme or .gitignore
     copy the repo url here:
   */}));
   rl.prompt();

@@ -35,10 +35,14 @@ module.exports = function() {
   exe('touch server/request.js');
   exe('touch server/server.js');
   exe('touch server/mongo.js');
+
+  exe('touch lib/main.js');
+  exe('touch lib/app.jsx');
+
   exe('touch index.js');
 
   exe('git add .');
-  exe('git commit -m "Welcome to Carmen!"')
+  exe('git commit -m "Welcome to Carmen!"');
 
   close('project initialized', 'shout');
 
