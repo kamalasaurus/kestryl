@@ -8,40 +8,30 @@ module.exports = function() {
 
   var close      = require('../functions/close');
   var exe        = require('../functions/exe');        // run code synchronously
-  var writeFile  = require('../functions/write-file'); // generate files
-
-  var readme     = require('../assets/readme');
-  var gitconfig  = require('../assets/gitconfig');
-  var gitignore  = require('../assets/gitignore');
-  var indexHTML  = require('../assets/index-html');
+  var writeDir   = require('../functions/write-dir');
 
   var dir        = exe('pwd', true);
 
   /* ==================================================================
-    INITIALIZATION SCRIPT
+    ASSETS
   ================================================================== */
 
-  // .gitconfig
-  writeFile(dir, gitconfig.filename, gitconfig.file);
+  var rootDeps   = requireDir('../assets/root');
+  var serverDeps = requireDir('../assets/server');
+  var clientDeps = requireDir('../assets/lib');
 
-  // .gitignore
-  writeFile(dir, gitignore.filename, gitignore.file);
+  /* ==================================================================
+    INITIALIZATION SCRIPT
+  ================================================================== */
 
   // directories
   exe('mkdir server');
   exe('mkdir lib');
   exe('mkdir dist');
 
-  writeFile(dir, indexHTML.filename, indexHTML.file);
-
-  exe('touch server/request.js');
-  exe('touch server/server.js');
-  exe('touch server/mongo.js');
-
-  exe('touch lib/main.js');
-  exe('touch lib/app.jsx');
-
-  exe('touch index.js');
+  writeDir(dir, rootDeps);
+  writeDir(dir + '/server', serverDeps);
+  writeDir(dir + '/lib', clientDeps);
 
   exe('git add .');
   exe('git commit -m "Welcome to Carmen!"');

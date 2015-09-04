@@ -11,7 +11,7 @@ module.exports = function() {
 
   var deps      = require('../lib/dependencies');  // keys: npm, jspm, gitignore
   var scripts   = require('../lib/scripts');       // keys: scripts
-  var initFiles = require('./init-files');         // initialize project structure
+  var initFiles = require('./init-3');             // initialize project structure
 
   var dir       = exe('pwd', true);
   var readme    = require('../assets/readme-md');

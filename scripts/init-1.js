@@ -14,7 +14,7 @@ module.exports = function(callback) {
   var exe       = require('../functions/exe');
   var say       = require('../functions/say');
 
-  var afterGit  = require('../scripts/after-git');
+  var afterGit  = require('../scripts/init-2');
 
   /* ==================================================================
     GIT REPO PROMPT
