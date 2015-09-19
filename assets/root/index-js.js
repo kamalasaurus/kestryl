@@ -4,6 +4,7 @@ module.exports = {
   filename: 'index.js',
   file: multiline.stripIndent(function(){/*
     import koa from 'koa';
+    import koaBody from 'koa-body';
     import router from 'koa-router';
     import serve from 'koa-static';
     import queryString from 'koa-qs';
@@ -16,24 +17,13 @@ module.exports = {
 
 
     var app = koa();
+    var bodyParser = koaBody();
     var routes = router();
     queryString(app, 'first');
 
     var mongo = new Mongo('54.184.18.78:27017/kenny');
 
     routes
-      .get('/', function* (next) {
-        this.response.type = 'text/html';
-        this.body = yield fs.readFile('index.html', 'utf8');
-      })
-      .get('/dist.js', function* (next) {
-        this.response.type = 'application/javascript';
-        this.body = yield fs.readFile('./dist/dist.js', 'utf8');
-      })
-      .get('/dist.css', function* (next) {
-        this.response.type = 'text/css';
-        this.body = yield fs.readFile('./dist/dist.css', 'utf8');
-      })
       .get('/data', function* (next) {
         this.response.type = 'application/json';
         this.body = yield get(this.query);

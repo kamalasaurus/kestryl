@@ -20,6 +20,7 @@ module.exports = {
 
     ###Directory Structure
 
+    <pre>
     .
     ├── README.md
     ├── config.js
@@ -33,6 +34,7 @@ module.exports = {
     └── server
         ├── mongo.js
         └── request.js
+    </pre>
 
     */})
 }

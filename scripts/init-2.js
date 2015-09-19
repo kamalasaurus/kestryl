@@ -28,7 +28,7 @@ module.exports = function() {
   exe('npm init');
 
   say.shout('installing jspm');
-  exe('npm install --save-dev jspm');
+  exe('npm install --save jspm');
 
   say.shout('input jspm fields'.toUpperCase());
   exe('jspm init');
@@ -37,7 +37,7 @@ module.exports = function() {
 
   // server dependencies
   deps.npm.forEach(function(dep) {
-    exe('npm install --save-dev ' + dep);
+    exe('npm install --save ' + dep);
   });
 
   // client dependencies
