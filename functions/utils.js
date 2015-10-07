@@ -9,5 +9,9 @@ module.exports = {
     return arr.length === 1
       ? arr.toString()
       : '[' + arr.join(', ') + ']';
+  },
+
+  printOpts: function(arr) {
+    return '< ' + arr.join(', ') + ' >';
   }
 }

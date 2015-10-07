@@ -1,17 +1,17 @@
-module.exports = function() {
+module.exports = function(options) {
 
   /* ==================================================================
     DEPENDENCIES
   ================================================================== */
 
   var say       = require('../functions/say');
-  var exe       = require('../functions/exe');     // run code synchronously
-  var fsJson    = require('../functions/fs-json'); // add fields to json
+  var exe       = require('../functions/exe');        // run code synchronously
+  var fsJson    = require('../functions/fs-json');    // add fields to json
   var writeFile = require('../functions/write-file'); // generate files
 
-  var deps      = require('../lib/dependencies');  // keys: npm, jspm, gitignore
-  var scripts   = require('../lib/scripts');       // keys: scripts
-  var initFiles = require('./init-3');             // initialize project structure
+  var deps      = require('../lib/dependencies');     // keys: npm, jspmMithril, jspmReact, gitignore
+  var scripts   = require('../lib/scripts');          // keys: scripts
+  var initFiles = require('./init-3');                // initialize project structure
 
   var dir       = exe('pwd', true);
   var readmeMD  = require('../assets/readme-md');
@@ -28,6 +28,13 @@ module.exports = function() {
   exe('npm init');
 
   say.shout('installing jspm');
+
+  // test for global jspm-cli install
+  // TODO: figure out a way to get 'npm list -g jspm' to not crash
+  if (!/jspm/.test(exe('npm list -g', true))) {
+    exe('npm install -g jspm');
+  }
+
   exe('npm install --save jspm');
 
   say.shout('input jspm fields'.toUpperCase());
@@ -41,9 +48,16 @@ module.exports = function() {
   });
 
   // client dependencies
-  deps.jspm.forEach(function(dep) {
-    exe('jspm install ' + dep);
-  });
+
+  if (options.withReact) {
+    deps.jspmReact.forEach(function(dep) {
+      exe('jspm install ' + dep);
+    });
+  } else {
+    deps.jspmMithril.forEach(function(dep) {
+      exe('jspm install ' + dep);
+    });
+  }
 
   // append scripts to package.json
   fsJson('package.json', scripts);

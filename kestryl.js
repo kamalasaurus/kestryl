@@ -16,18 +16,20 @@ var version  = require('./scripts/version');
 var options  = require('./lib/options');
 
 var args = process.argv;
-var arg = args[2];
 
-if (args.length > 3) {
-  close('too many arguments', 'error');
-}
+var arg = args[2];
+var opt = args[3];
 
 if (args.length === 2) {
   help();
 }
 
 if        (contains(options.init.args, arg))    {
-  init();
+  if (contains(options.init.opts, opt)) {
+    init({ withReact: true });
+  } else {
+    init();
+  }
 } else if (contains(options.help.args, arg))    {
   help();
 } else if (contains(options.version.args, arg)) {

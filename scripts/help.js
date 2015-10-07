@@ -5,6 +5,7 @@ module.exports = function() {
   var leadSpace   = (new Array(25)).join(' ');
 
   var printArray  = require('../functions/utils').printArray;
+  var printOpts   = require('../functions/utils').printOpts;
 
   var printHeader = require('../functions/header');
   var close       = require('../functions/close');
@@ -13,10 +14,13 @@ module.exports = function() {
   printHeader();
 
   keys(commands).forEach(function(command) {
-    var cmdStr = printArray(commands[command].args);
-    var helpStr = commands[command].help;
+    var cmd = commands[command];
 
-    console.log(kestStr, cmdStr);
+    var cmdStr = printArray(cmd.args);
+    var optStr = cmd.opts ? printOpts(cmd.opts) : '';
+    var helpStr = cmd.help;
+
+    console.log(kestStr, cmdStr, optStr);
     console.log(leadSpace, helpStr, '\n');
   });
 

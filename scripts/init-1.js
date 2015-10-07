@@ -2,7 +2,7 @@ function isGit(repo) {
   return /git@/.test(repo);
 }
 
-module.exports = function(callback) {
+module.exports = function(options) {
 
   /* ==================================================================
     DEPENDENCIES
@@ -25,8 +25,8 @@ module.exports = function(callback) {
   rl = readline.createInterface(process.stdin, process.stdout);
   rl.setPrompt(multiline.stripIndent(function(){/*
     please initialize a github repo at this time
+    make sure to initialize WITHOUT readme or .gitignore
     https://help.github.com/articles/create-a-repo/
-    initialize WITHOUT readme or .gitignore
     copy the repo url here:
   */}));
   rl.prompt();
@@ -43,7 +43,7 @@ module.exports = function(callback) {
   }).on('close', function() {
     exe('git remote add origin ' + giturl);
     say.shout('added remote repository');
-    afterGit();
+    afterGit(options);
   });
 
 }

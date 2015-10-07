@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function(options) {
 
   /* ==================================================================
     DEPENDENCIES
@@ -18,7 +18,9 @@ module.exports = function() {
 
   var rootDeps   = requireDir('../assets/root');
   var serverDeps = requireDir('../assets/server');
-  var clientDeps = requireDir('../assets/lib');
+  var clientDeps = options.withReact
+    ? requireDir('../assets/react-lib')
+    : requireDir('../assets/lib');
 
   /* ==================================================================
     INITIALIZATION SCRIPT

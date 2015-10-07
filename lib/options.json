@@ -28,6 +28,9 @@
     "args": [
       "init"
     ],
+    "opts": [
+      "--react"
+    ],
     "help": "initialize a new project in an empty directory"
   }
 }

@@ -10,11 +10,11 @@
     "mongorito",
     "nodemon"
   ],
-  "jspm-react": [
+  "jspmReact": [
     "react",
     "react-dom"
   ],
-  "jspm-mithril": [
+  "jspmMithril": [
     "mithril"
   ]
 }
