@@ -1,15 +1,8 @@
-#carmen
+#kestryl
 
-*Pronunciation:* "Carmeeeen" or "Carmayne".  Go really nasal between the m and the n.  Like the ão in São Paulo.  Stretch out the syllable until awkward.
+A command-line utility to rapidly create thin, full-stack ES6 single-page website prototypes with minimal bloat. Emphasizes ES6 features like generator functions to control application flow.
 
-###Add this to your `~/.gitconfig`
+Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.
 
-It makes your `git log` actually usable.
+###Documentation
 
-```
-[color]
-  ui = true
-
-[format]
-  pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
-```

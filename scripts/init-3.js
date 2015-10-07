@@ -34,7 +34,7 @@ module.exports = function() {
   writeDir(dir + '/lib', clientDeps);
 
   exe('git add .');
-  exe('git commit -m "Welcome to Carmen!"');
+  exe('git commit -m "Welcome to Kestryl!"');
 
   close('project initialized', 'shout');
 

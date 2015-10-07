@@ -3,9 +3,9 @@ module.exports = function() {
   var chalk     = require('chalk');
 
   var leadSpace = (new Array(25)).join(' ');
-  var title     = '   carmen!';
+  var title     = '   kestryl!';
   var formatted = chalk.magenta.bold(title);
-  var subtitle  = '   carmen is a command-line utility that makes it easy to create modular, full-stack ES6 projects'
+  var subtitle  = '   kestryl is a command-line utility that makes it easy to create modular, full-stack ES6 projects'
   var linebreak = chalk.yellow.bold((new Array(75)).join('='));
 
 

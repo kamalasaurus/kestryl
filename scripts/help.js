@@ -1,7 +1,7 @@
 module.exports = function() {
 
   var keys        = Object.keys;
-  var carmStr     = 'carmen'
+  var kestStr     = 'kestryl'
   var leadSpace   = (new Array(25)).join(' ');
 
   var printArray  = require('../functions/utils').printArray;
@@ -16,7 +16,7 @@ module.exports = function() {
     var cmdStr = printArray(commands[command].args);
     var helpStr = commands[command].help;
 
-    console.log(carmStr, cmdStr);
+    console.log(kestStr, cmdStr);
     console.log(leadSpace, helpStr, '\n');
   });
 

@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 'use strict';
 
-process.title = 'carmen';
+process.title = 'kestryl';
 
 // utils
 var contains = require('./functions/utils').contains;

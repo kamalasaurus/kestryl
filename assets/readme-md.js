@@ -3,12 +3,15 @@ var multiline = require('multiline');
 module.exports = {
   filename: 'README.md',
   file: multiline.stripIndent(function(){/*
-    ##Welcome to Carmen!
+    ##Welcome to Kestryl!
 
     Run your project with `npm run start`
     Debug your project with `npm run debug`
     Access an ES6 console with `npm run console`
-    Generate yieldable boilerplate with `carmen boil <filename>`
+
+    Initialize project with `kestryl init`
+    Generate yieldable boilerplate with `kestryl plate <filename>`
+    Initialize route with `kestryl g <route>`
 
     ###Client-side dependencies
 
