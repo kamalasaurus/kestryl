@@ -21,6 +21,7 @@ module.exports = function(options) {
   var clientDeps = options.withReact
     ? requireDir('../assets/react-lib')
     : requireDir('../assets/lib');
+  var cssDeps    = requireDir('../assets/css');
 
   /* ==================================================================
     INITIALIZATION SCRIPT
@@ -29,11 +30,13 @@ module.exports = function(options) {
   // directories
   exe('mkdir server');
   exe('mkdir lib');
+  exe('mkdir css');
   exe('mkdir dist');
 
   writeDir(dir, rootDeps);
   writeDir(dir + '/server', serverDeps);
   writeDir(dir + '/lib', clientDeps);
+  writeDir(dir + '/css', cssDeps);
 
   exe('git add .');
   exe('git commit -m "Welcome to Kestryl!"');
