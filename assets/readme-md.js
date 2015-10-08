@@ -10,7 +10,7 @@ module.exports = {
     Access an ES6 console with `npm run console`
 
     Initialize project with `kestryl init`
-    Generate yieldable boilerplate with `kestryl plate <filename>`
+    Generate yieldable boilerplate with `kestryl y <filename>`
     Initialize route with `kestryl g <route>`
 
     ###Client-side dependencies
