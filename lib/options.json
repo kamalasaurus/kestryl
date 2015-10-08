@@ -32,5 +32,19 @@
       "--react"
     ],
     "help": "initialize a new project in an empty directory"
+  },
+  "generate": {
+    "args": [
+      "--g",
+      "-g",
+      "g",
+      "--generate",
+      "-generate",
+      "generate"
+    ],
+    "input": [
+      "filename"
+    ],
+    "help": "generate a yieldable promise for a server module"
   }
 }

@@ -10,16 +10,19 @@ module.exports = {
     Access an ES6 console with `npm run console`
 
     Initialize project with `kestryl init`
-    Generate yieldable boilerplate with `kestryl y <filename>`
-    Initialize route with `kestryl g <route>`
+    Generate yieldable server module with `kestryl g <filename>`
 
-    ###Client-side dependencies
+    ###Loading client-side dependencies
 
     Refer to [jspm](https://github.com/jspm/jspm-cli) docs
 
-    ###Server-side dependencies
+    ###Loading server-side dependencies
 
     Refer to [npm](https://github.com/npm/npm) docs
+
+    ###Creating routable components
+
+    refer to [mithril](https://github.com/lhorie/mithril.js) docs
 
     ###Directory Structure
 
@@ -31,7 +34,7 @@ module.exports = {
     ├── index.html
     ├── index.js
     ├── lib
-    │   ├── app.jsx
+    │   ├── example-component.js
     │   └── main.js
     ├── package.json
     └── server

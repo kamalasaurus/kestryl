@@ -63,6 +63,6 @@ module.exports = function(options) {
   fsJson('package.json', scripts);
 
   // create directory structure and boilerplate
-  initFiles();
+  initFiles(options);
 
 }

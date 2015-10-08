@@ -6,6 +6,7 @@ module.exports = function() {
 
   var printArray  = require('../functions/utils').printArray;
   var printOpts   = require('../functions/utils').printOpts;
+  var printInput  = require('../functions/utils').printInput;
 
   var printHeader = require('../functions/header');
   var close       = require('../functions/close');
@@ -18,9 +19,10 @@ module.exports = function() {
 
     var cmdStr = printArray(cmd.args);
     var optStr = cmd.opts ? printOpts(cmd.opts) : '';
+    var inputStr = cmd.input ? printInput(cmd.input) : '';
     var helpStr = cmd.help;
 
-    console.log(kestStr, cmdStr, optStr);
+    console.log(kestStr, cmdStr, optStr, inputStr);
     console.log(leadSpace, helpStr, '\n');
   });
 

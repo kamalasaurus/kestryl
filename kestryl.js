@@ -11,6 +11,7 @@ var close    = require('./functions/close');
 var init     = require('./scripts/init');
 var help     = require('./scripts/help');
 var version  = require('./scripts/version');
+var generate = require('./scripts/generate');
 
 // command-line options
 var options  = require('./lib/options');
@@ -28,12 +29,14 @@ if        (contains(options.init.args, arg))    {
   if (contains(options.init.opts, opt)) {
     init({ withReact: true });
   } else {
-    init();
+    init({});
   }
 } else if (contains(options.help.args, arg))    {
   help();
 } else if (contains(options.version.args, arg)) {
   version();
+} else if (contains(options.generate.args, arg)) {
+  generate({ filename: opt });
 } else                                          {
   close('invalid argument', 'error');
 }

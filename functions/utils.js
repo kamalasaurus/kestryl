@@ -13,5 +13,9 @@ module.exports = {
 
   printOpts: function(arr) {
     return '< ' + arr.join(', ') + ' >';
+  },
+
+  printInput: function(arr) {
+    return '| ' + arr.join(', ') + ' |';
   }
 }

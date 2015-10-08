@@ -8,6 +8,7 @@ module.exports = {
     import router from 'koa-router';
     import serve from 'koa-static';
     import queryString from 'koa-qs';
+
     import fs from 'co-fs';
 
     import Mongo from './server/mongo';
@@ -21,7 +22,7 @@ module.exports = {
     var routes = router();
     queryString(app, 'first');
 
-    var mongo = new Mongo('54.184.18.78:27017/kenny');
+    var mongo = new Mongo('127.0.0.1:27017/db-name');
 
     routes
       .get('/data', function* (next) {

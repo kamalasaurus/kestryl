@@ -5,8 +5,6 @@ module.exports = {
   file: multiline.stripIndent(function(){/*
     import m from 'mithril';
 
-    const { keys } = Object;
-
     export default class ExampleComponent {
 
       constructor() {

@@ -8,9 +8,14 @@ module.exports = {
     import ExampleComponent from './example-component.jsx!';
 
     export default ()=> {
+      var app = document.createElement('div');
+          app.setAttribute('id', 'app');
+
+      document.body.appendChild(app);
+
       DOM.render(
         <ExampleComponent name="Example" />,
-        document.getElementById('app')
+        app
       );
     }
     */})

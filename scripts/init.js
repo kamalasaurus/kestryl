@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function(options) {
 
   /* ==================================================================
     DEPENDENCIES
@@ -20,10 +20,14 @@ module.exports = function() {
   // !! coerces 0 -> false, else -> true
   if (!!+content) { close('directory must be empty', 'error') };
 
+  // create kestryl config file
+  // TODO: actually add the config list (react vs. mithril primarily)
+  exe('touch .kestryl')
+
   // git init
   exe('git init');
 
   // prompt for addition of actual remote
-  addGit();
+  addGit(options);
 
 }
