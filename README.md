@@ -1,18 +1,19 @@
 ![kestryl](./images/kestryl.png?raw=true)
-#kestryl
+
+<h1>kestryl</h1>
 
 A command-line utility to rapidly create thin, full-stack ES6 single-page websites with minimal bloat. Useful for rapid prototyping.
 
 Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.  Has optional `react` support.
 
-###TODO
+<h3>TODO</h3>
 1. Add ESLint
 2. Add live-browser-refresh capabilities upon filechange
 3. Sequester css and images into assets directory. Show example of styling in JS instead of css; encourage minimal asset footprint.
 4. Use [async.js](https://www.npmjs.com/package/async) for waterfall pattern in managing initialization flow instead of nesting across files.
 5. Make the emitted index.html from `kestryl bundle` include changes to the development index.html (assets, analytics inclusions, etc).
 
-###Documentation
+<h3>Documentation</h3>
 
 `kestryl [--version, -version, version, --v, -v, v]`
 

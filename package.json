@@ -1,6 +1,6 @@
 {
   "name": "kestryl",
-  "version": "0.9.0",
+  "version": "0.0.1",
   "description": "Full stack ES6 command line utility.",
   "main": "index.js",
   "bin": {
