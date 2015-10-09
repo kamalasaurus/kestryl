@@ -29,7 +29,12 @@
       "init"
     ],
     "opts": [
-      "--react"
+      "--r",
+      "-r",
+      "r",
+      "--react",
+      "-react",
+      "react"
     ],
     "help": "initialize a new project in an empty directory"
   },

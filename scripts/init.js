@@ -24,9 +24,9 @@ module.exports = function(options) {
   // TODO: actually add the config list (react vs. mithril primarily)
   exe('touch .kestryl')
   if (options.withReact) {
-    exe('cat .kestryl << react');
+    exe('echo "react" >> .kestryl');
   } else {
-    exe('cat .kestryl << mithril');
+    exe('echo "mithril" >> .kestryl');
   }
   // git init
   exe('git init');
