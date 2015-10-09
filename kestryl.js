@@ -13,6 +13,7 @@ var help      = require('./scripts/help');
 var version   = require('./scripts/version');
 var generate  = require('./scripts/generate');
 var component = require('./scripts/component');
+var bundle    = require('./scripts/bundle');
 
 // command-line options
 var options   = require('./lib/options');
@@ -43,6 +44,8 @@ if (contains(options.init.args, arg)) {
   generate({ filename: opt });
 } else if (contains(options.component.args, arg)) {
   component({ filename: opt });
+} else if (contains(options.bundle.args, arg)) {
+  bundle();
 } else {
   close('invalid argument', 'error');
 }

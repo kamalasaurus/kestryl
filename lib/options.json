@@ -65,5 +65,16 @@
       "filename"
     ],
     "help": "generate a component of the initialization type"
+  },
+  "bundle": {
+    "args": [
+      "--b",
+      "-b",
+      "b",
+      "--bundle",
+      "-bundle",
+      "bundle"
+    ],
+    "help": "bundle all js dependencies into a single minified file"
   }
 }
