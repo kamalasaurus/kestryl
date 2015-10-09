@@ -7,9 +7,10 @@ Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.  Has optional `rea
 
 ###TODO
 1. Add ESLint
-2. Add live-reload capabilities upon filechange
+2. Add live-browser-refresh capabilities upon filechange
 3. Add bundle script that emits the index.html as well as the jspm package into app/dist
 4. Sequester css and images into assets directory. Show example of styling in JS instead of css; encourage minimal asset footprint.
+5. Use [async.js](https://www.npmjs.com/package/async) for waterfall pattern in managing initialization flow instead of nesting across files.
 
 ###Documentation
 
