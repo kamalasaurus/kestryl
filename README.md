@@ -28,3 +28,7 @@ initialize a new project in an empty directory
 `kestryl [--g, -g, g, --generate, -generate, generate]  | filename |`
 
 generate a yieldable promise for a server module
+
+`kestryl [--c, -c, c, --component, -component, component]  | filename |`
+
+generate a component of the initialization type

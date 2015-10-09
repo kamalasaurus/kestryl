@@ -46,5 +46,19 @@
       "filename"
     ],
     "help": "generate a yieldable promise for a server module"
+  },
+  "component": {
+    "args": [
+      "--c",
+      "-c",
+      "c",
+      "--component",
+      "-component",
+      "component"
+    ],
+    "input": [
+      "filename"
+    ],
+    "help": "generate a component of the initialization type"
   }
 }

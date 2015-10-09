@@ -23,7 +23,11 @@ module.exports = function(options) {
   // create kestryl config file
   // TODO: actually add the config list (react vs. mithril primarily)
   exe('touch .kestryl')
-
+  if (options.withReact) {
+    exe('cat .kestryl << react');
+  } else {
+    exe('cat .kestryl << mithril');
+  }
   // git init
   exe('git init');
 
