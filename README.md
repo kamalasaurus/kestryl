@@ -21,9 +21,9 @@ print version number
 
 print valid commands
 
-`kestryl init < --react >`
+`kestryl init < --r, -r, r, --react, -react, react >`
 
-initialize a new project in an empty directory
+initialize a new project in an empty directory, defaults to mithril without one of the react flags
 
 `kestryl [--g, -g, g, --generate, -generate, generate]  | filename |`
 
