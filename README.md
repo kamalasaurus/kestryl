@@ -7,6 +7,7 @@ A command-line utility to rapidly create thin, full-stack ES6 single-page websit
 Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.  Has optional `react` support.
 
 <h3>TODO</h3>
+
 1. Add ESLint
 2. Add live-browser-refresh capabilities upon filechange
 3. Sequester css and images into assets directory. Show example of styling in JS instead of css; encourage minimal asset footprint.
