@@ -32,11 +32,11 @@ module.exports = function(options) {
     say.error('file already exists');
     return;
   }
-  
+
   var compType  = fs.readFileSync('./.kestryl').toString();
 
   if (/react/i.test(compType)) {
-    var component = require('../assets/react-lib/example-component-js');
+    var component = require('../assets/react-lib/example-component-jsx');
   } else {
     var component = require('../assets/lib/example-component-js');
   }
