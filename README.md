@@ -1,3 +1,4 @@
+![kestryl](./images/kestryl.png?raw=true)
 #kestryl
 
 A command-line utility to rapidly create thin, full-stack ES6 single-page websites with minimal bloat. Useful for rapid prototyping.
@@ -8,6 +9,7 @@ Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.  Has optional `rea
 1. Add ESLint
 2. Add live-reload capabilities upon filechange
 3. Add bundle script that emits the index.html as well as the jspm package into app/dist
+4. Sequester css and images into assets directory. Show example of styling in JS instead of css; encourage minimal asset footprint.
 
 ###Documentation
 
