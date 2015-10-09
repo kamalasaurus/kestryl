@@ -8,5 +8,6 @@ module.exports = {
 
     [format]
       pretty = %C(magenta)%h%Creset %Cgreen[%cr]%Creset (%an) %s
+
     */})
 }

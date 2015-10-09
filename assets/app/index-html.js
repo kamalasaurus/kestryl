@@ -14,5 +14,6 @@ module.exports = {
         System.import('lib/main').catch(console.error.bind(console));
       </script>
     </body>
+
     */})
 }

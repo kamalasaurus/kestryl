@@ -4,43 +4,34 @@ module.exports = function(options) {
     DEPENDENCIES
   ================================================================== */
 
-  var requireDir = require('require-dir');
+  var spawn     = require('child_process').spawn;
 
-  var close      = require('../functions/close');
-  var exe        = require('../functions/exe');        // run code synchronously
-  var writeDir   = require('../functions/write-dir');
+  var say       = require('../functions/say');
 
-  var dir        = exe('pwd', true);
+  var actions   = require('../lib/jspm-actions');
 
-  /* ==================================================================
-    ASSETS
-  ================================================================== */
+  // this is hacky... TODO: figure out how jspm actually exits upon completion
+  var exitCode  = "ok   Loader files downloaded successfully\n";
 
-  var rootDeps   = requireDir('../assets/root');
-  var serverDeps = requireDir('../assets/server');
-  var clientDeps = options.withReact
-    ? requireDir('../assets/react-lib')
-    : requireDir('../assets/lib');
-  var cssDeps    = requireDir('../assets/css');
+  var initDeps  = require('../scripts/init-4');
 
   /* ==================================================================
-    INITIALIZATION SCRIPT
+    JSPM PROMPT
   ================================================================== */
 
-  // directories
-  exe('mkdir server');
-  exe('mkdir lib');
-  exe('mkdir css');
-  exe('mkdir dist');
+  var child = spawn('jspm', ['init']);
+      child.stdout.pipe(process.stdout);
+      child.stderr.pipe(process.stderr);
 
-  writeDir(dir, rootDeps);
-  writeDir(dir + '/server', serverDeps);
-  writeDir(dir + '/lib', clientDeps);
-  writeDir(dir + '/css', cssDeps);
-
-  exe('git add .');
-  exe('git commit -m "Welcome to Kestryl!"');
-
-  close('project initialized', 'shout');
+      child.stdout.on('data', function(data) {
+        if (actions.length) {
+          child.stdin.write(actions.shift());
+        }
+        if (data.toString() === exitCode) {
+          child.kill('SIGTERM');
+          say.shout('jspm initialized');
+          initDeps(options);
+        }
+      });
 
 }

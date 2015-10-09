@@ -37,5 +37,6 @@ module.exports = {
     }
 
     export default ExampleComponent;
+
     */})
 }

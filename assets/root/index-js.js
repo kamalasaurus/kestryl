@@ -31,9 +31,10 @@ module.exports = {
       });
 
     app
-      .use(serve('.', {defer: true}))
+      .use(serve('./app', {defer: true}))
       .use(routes.routes())
       .use(routes.allowedMethods())
       .listen(process.argv[2]);
+
     */})
 }

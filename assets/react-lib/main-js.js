@@ -6,5 +6,6 @@ module.exports = {
     import App from './app.jsx!';
 
     App();
+
     */})
 }

@@ -6,5 +6,6 @@ module.exports = {
     node_modules
     jspm_packages
     .DS_Store
+
     */})
 }

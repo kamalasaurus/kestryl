@@ -5,9 +5,9 @@ A command-line utility to rapidly create thin, full-stack ES6 single-page websit
 Powered by `babel-node`, `jspm`, `mithril`, and `koa-router`.  Has optional `react` support.
 
 ##TODO
-Don't use for production yet, because this is required for security:
-
-Catch-and-release jspm initialization to different defaults as per http://stackoverflow.com/questions/10901660/node-js-interact-with-shell-application so the static file server won't have to serve the root directory. This will prevent browser access to server logic source.
+1. Add ESLint
+2. Add live-reload capabilities upon filechange
+3. Add bundle script that emits the index.html as well as the jspm package into app/dist
 
 ###Documentation
 
