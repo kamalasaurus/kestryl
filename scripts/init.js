@@ -11,10 +11,6 @@ module.exports = function(options) {
 
   var content   = exe('ls -A | wc -l', true);    // checks if target directory has contents
 
-  var babelrc   = options.withReact ?
-                 "{ \"presets\": [\"es2015\", \"stage-0\", \"react\"] }" :
-                 "{ \"presets\": [\"es2015\", \"stage-0\"] }";
-
   /* ==================================================================
     INITIALIZATION SCRIPT
   ================================================================== */
@@ -36,7 +32,11 @@ module.exports = function(options) {
   }
 
   // create babelrc
-  exe('echo ' + babelrc + ' >> .babelrc');
+  if (options.withReact) {
+    exe('echo "{ \"presets\": [\"es2015\", \"stage-0\", \"react\"] }" >> .babelrc'):
+  } else {
+    exe('echo "{ \"presets\": [\"es2015\", \"stage-0\"] }" >> .babelrc');
+  }
 
   // git init
   exe('git init');
