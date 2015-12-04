@@ -15,8 +15,7 @@
   ],
   "jspmReact": [
     "react",
-    "react-dom",
-    "babel-preset-react"
+    "react-dom"
   ],
   "jspmMithril": [
     "mithril"

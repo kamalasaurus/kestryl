@@ -22,6 +22,10 @@ module.exports = function(options) {
     exe('npm install --save ' + dep);
   });
 
+  if (options.withReach) {
+    exe('npm install --save babel-preset-react');
+  }
+
   // client dependencies
 
   if (options.withReact) {
