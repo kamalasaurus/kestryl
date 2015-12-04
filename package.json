@@ -1,6 +1,6 @@
 {
   "name": "kestryl",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Full stack ES6 command line utility.",
   "main": "index.js",
   "bin": {
@@ -28,7 +28,7 @@
   "author": "K-_-R <kamalasaurus@gmail.com> (http://kamalasaurus.github.io)",
   "license": "MIT",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=5.0.0"
   },
   "dependencies": {
     "chalk": "^1.1.0",
