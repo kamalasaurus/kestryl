@@ -22,7 +22,7 @@ module.exports = function(options) {
     exe('npm install --save ' + dep);
   });
 
-  if (options.withReach) {
+  if (options.withReact) {
     exe('npm install --save babel-preset-react');
   }
 
