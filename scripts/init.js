@@ -33,9 +33,9 @@ module.exports = function(options) {
 
   // create babelrc
   if (options.withReact) {
-    exe('echo "{ \"presets\": [\"es2015\", \"stage-0\", \"react\"] }" >> .babelrc');
+    exe('echo \'{ \"presets\": [\"es2015\", \"stage-0\", \"react\"] }\' >> .babelrc');
   } else {
-    exe('echo "{ \"presets\": [\"es2015\", \"stage-0\"] }" >> .babelrc');
+    exe('echo \'{ \"presets\": [\"es2015\", \"stage-0\"] }\' >> .babelrc');
   }
 
   // git init
