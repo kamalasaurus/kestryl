@@ -1,6 +1,8 @@
 {
   "npm": [
     "babel",
+    "babel-cli",
+    "babel-preset-es2015",
     "koa",
     "koa-body",
     "koa-router",
@@ -12,7 +14,8 @@
   ],
   "jspmReact": [
     "react",
-    "react-dom"
+    "react-dom",
+    "babel-preset-react"
   ],
   "jspmMithril": [
     "mithril"
