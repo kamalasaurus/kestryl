@@ -1,8 +1,8 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "console": "babel-node",
-    "start": "nodemon --exec babel-node -- index.js 8282",
-    "debug": "nodemon --exec babel-node -- --debug index.js 8282"
+    "console": "babel-node --stage 0",
+    "start": "nodemon --exec babel-node --stage 0 -- index.js 8282",
+    "debug": "nodemon --exec babel-node --stage 0 -- --debug index.js 8282"
   }
 }

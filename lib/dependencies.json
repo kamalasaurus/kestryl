@@ -3,6 +3,7 @@
     "babel-core",
     "babel-cli",
     "babel-preset-es2015",
+    "babel-preset-stage-0",
     "koa",
     "koa-body",
     "koa-router",
