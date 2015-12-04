@@ -15,7 +15,8 @@
   ],
   "jspmReact": [
     "react",
-    "react-dom"
+    "react-dom",
+    "jsx"
   ],
   "jspmMithril": [
     "mithril"
