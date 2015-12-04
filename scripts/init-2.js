@@ -32,7 +32,18 @@ module.exports = function(options) {
     exe('npm install -g jspm');
   }
 
+  if (!/babel/.test(exe('npm list -g', true))) {
+    exe('npm install -g babel');
+    exe('npm install -g babel-cli');
+  }
+
   exe('npm install --save jspm');
+
+  exe('npm install --save-dev babel-preset-es2015');
+
+  if (options.withReact) {
+    exe('npm install --save-dev babel-preset-react');
+  }
 
   say.shout('you may now step away and grab a drink'.toUpperCase());
 

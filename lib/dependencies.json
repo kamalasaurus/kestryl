@@ -1,7 +1,6 @@
 {
   "npm": [
     "babel",
-    "babel-cli",
     "koa",
     "koa-body",
     "koa-router",
