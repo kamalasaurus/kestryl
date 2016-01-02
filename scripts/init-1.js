@@ -1,5 +1,5 @@
 function isGit(repo) {
-  return /git@/.test(repo);
+  return /github\.com/.test(repo) || /bitbucket\.org/.test(repo);
 }
 
 module.exports = function(options) {
